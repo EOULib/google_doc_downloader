@@ -49,10 +49,12 @@ class Controller:
                 return False 
             else:
                 self.download_directory = self.gui.get_download_directory().get()
-                print(f"This is the original download directory: {self.download_directory}")
-                if self.download_directory[-1] != '\\':
-                    self.download_directory = self.download_directory + "\\"
-                    print(f"This is what it looks like after: {self.download_directory}")
+                if "\\" in self.download_directory:
+                    if self.download_directory[-1] != '\\':
+                        self.download_directory = self.download_directory + "\\"
+                elif '/' in self.download_directory:
+                    if self.download_directory[-1] != '/':
+                        self.download_directory = self.download_directory + '/'
         self.downloader.set_target_webpage(self.target_url)
         self.downloader.set_download_directory(self.download_directory)
         number_of_docs = self.downloader.get_doc_ids()
