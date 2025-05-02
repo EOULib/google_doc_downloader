@@ -1,4 +1,5 @@
-import gdown, requests
+import requests
+import gdown
 from bs4 import BeautifulSoup
 from tkinter import messagebox
 
@@ -56,7 +57,8 @@ class Downloader:
       gui.update_progressbar(self.total_docs, count)
       full_download_url = self.gdrive_url_prefix + id
       try:
-        gdown.download(full_download_url, self.download_directory)
+          print(f"URL is: {full_download_url} and the directory is: {self.download_directory}")
+          gdown.download(full_download_url, self.download_directory)
       except Exception as e:
         messagebox.showinfo("EXCEPTION", f"Download failed for the following reason: {e}")
         self.gdoc_id_list.clear()
