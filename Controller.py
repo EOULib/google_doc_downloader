@@ -1,6 +1,7 @@
 from Downloader import Downloader
 from Gui import Gui
 
+import sys
 import threading
 import time
 from tkinter import messagebox
@@ -49,10 +50,10 @@ class Controller:
                 return False 
             else:
                 self.download_directory = self.gui.get_download_directory().get()
-                if "\\" in self.download_directory:
+                if sys.platform == 'win32':
                     if self.download_directory[-1] != '\\':
                         self.download_directory = self.download_directory + "\\"
-                elif '/' in self.download_directory:
+                else:
                     if self.download_directory[-1] != '/':
                         self.download_directory = self.download_directory + '/'
         self.downloader.set_target_webpage(self.target_url)
