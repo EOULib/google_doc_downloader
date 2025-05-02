@@ -40,7 +40,7 @@ If you start the program as a Python script rather than installing it with the W
 
 ### How to Use
 Bulk downloads of Google Docs links on a specified webpage will be donwloaded to a directory of the user's choosing.  Simply fill in the Target Webpage URL and Download Directory fields and click the "Run Downloader" button.  Further desctiptions of both input fields below.
-![Image of User Interface](./gui.png)
+![Image of User Interface](./google-doc-downloader.png)
 
 - <ins>**Input field desctiptions:**</ins>
 	- **Target Webpage URL**: This field is required.  Enter the URL for the webpage you want to target for downloading all Google Doc links that appear on it.  All URLs must start with either https// or http://, otherwise you'll get an error.  Webpages without Google Doc Links won't make any downloads, so be sure you're pointing to a page that actually has Google Doc Links.  This downloader will not work in any Google Drive folders, it only works on webpages with Google Doc links for docs available to the public.  
